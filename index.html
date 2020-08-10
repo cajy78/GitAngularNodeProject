@@ -15,5 +15,9 @@
 		<h2>Please Enter the below information and click on "Create Account"</h2>
 		<h3>Note: Ensure fields marked <span style="color:red"><sup>*</sup></span> are all updated</h3>
 		<br>
+		<div data-ng-app="VerificationApp" data-ng-controller="VerificationController">
+			<form name="CustomerUpdate" data-ng-submit="CustomerUpdate.$valid" action="http://localhost:3000/registerCustomer" method="post" novalidate>
+			</form>
+		</div>
 	</body>
 </html>
