@@ -17,6 +17,82 @@
 		<br>
 		<div data-ng-app="VerificationApp" data-ng-controller="VerificationController">
 			<form name="CustomerUpdate" data-ng-submit="CustomerUpdate.$valid" action="http://localhost:3000/registerCustomer" method="post" novalidate>
+				<table>
+					<tr>
+						<td rowspan="7"><label for="PersonalDetails">Personal Details: </label></td>
+					</tr>
+					<tr>
+						<td><label for="First Name">First Name: </label><span style="color:red"><sup>*</sup></span></td>
+						<td><input type="text" data-ng-model="FirstName" name="FirstName" required></td>
+						<td><span class="error" data-ng-show="CustomerUpdate.FirstName.$dirty && CustomerUpdate.FirstName.$error.required" style="color:red"><i><sup>Required Field</sup></i></span></td>
+					</tr>
+					<tr>
+						<td><label for="Middle Name">Middle Name: </label><span style="color:red"><sup>*</sup></span></td>
+						<td><input type="text" data-ng-model="MiddleName" name="MiddleName" required></td>
+						<td><span class="error" data-ng-show="CustomerUpdate.MiddleName.$dirty && CustomerUpdate.MiddleName.$error.required" style="color:red"><i><sup>Required Field</sup></i></span></td>
+					</tr>
+					<tr>
+						<td><label for="last Name">Last Name: </label><span style="color:red"><sup>*</sup></span></td>
+						<td><input type="text" data-ng-model="LastName" name="LastName" required></td>
+						<td><span class="error" data-ng-show="CustomerUpdate.LastName.$dirty && CustomerUpdate.LastName.$error.required" style="color:red"><i><sup>Required Field</sup></i></span></td>
+					</tr>
+					<tr>
+						<td><label for="gender">Gender: </label><span style="color:red"><sup>*</sup></span></td>
+						<td>
+							<select id="gender" data-ng-model="Gender" name="Gender" required>
+								<option value="none" selected disabled>Select Gender</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="Unspecified">Unspecified</option>
+							</select>
+						</td>
+						<td><span class="error" data-ng-show="CustomerUpdate.Gender.$dirty && CustomerUpdate.Gender.$error.required" style="color:red"><i><sup>Required Field</sup></i></span></td>
+					</tr>
+					<tr>
+						<td><label for="age">Age: </label><span style="color:red"><sup>*</sup></span></td>
+						<td><input type="number" data-ng-model="Age" name="Age" required></td>
+						<td>
+							<span class="error" data-ng-show="CustomerUpdate.Age.$dirty && CustomerUpdate.Age.$error.required" style="color:red"><i><sup>Required Field</sup></i></span>
+                			<span class="error" data-ng-show="!CustomerUpdate.Age.$error.required && CustomerUpdate.Age.$invalid"><i><sup>Only numerical values</sup></i></span>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="email">Email: </label><span style="color:red"><sup>*</sup></span></td>
+						<td><input type="email" data-ng-model="Email" name="Email" required></td>
+						<td>
+							<span class="error" data-ng-show="CustomerUpdate.Email.$dirty && CustomerUpdate.Email.$error.required" style="color:red"><i><sup>Required Field</sup></i></span>
+                			<span class="error" data-ng-show="!CustomerUpdate.Email.$error.required && CustomerUpdate.Email.$invalid" style="color:red"><i><sup>Invalid email address</sup></i></span>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="5"><label for="address">Address Details: </label></td>
+					</tr>
+					<tr>
+						<td><label for="apartments">Apartments: </label></td>
+						<td><input type="text" name="Apartments"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><label for="Location">Location: </label></td>
+						<td><input type="text" name="Location"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><label for="pincode">PIN Code: </label><span style="color:red"><sup>*</sup></span></td>
+						<td><input type="text" data-ng-model="Pincode" name="Pincode" required></td>
+						<td>
+							<span class="error" data-ng-show="CustomerUpdate.Pincode.$dirty && CustomerUpdate.Pincode.$error.required" style="color:red"><i><sup>Required Field</sup></i></span>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="city">City: </label><span style="color:red"><sup>*</sup></span></td>
+						<td><input type="text" data-ng-model="City" name="City" required></td>
+						<td><span class="error" data-ng-show="CustomerUpdate.City.$dirty && CustomerUpdate.City.$error.required" style="color:red"><i><sup>Required Field</sup></i></span></td>
+					</tr>
+					<tr>
+						<td colspan="3"><input type="submit" data-ng-disabled="CustomerUpdate.$invalid" name="submit" value="Create Account"></td>
+					</tr>
+				</table>
 			</form>
 		</div>
 	</body>
